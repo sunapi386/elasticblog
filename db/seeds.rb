@@ -20,6 +20,6 @@ articles = ["Apps from the Mac App Store may be used on any Macs that you own or
 "Updates for apps from the Mac App Store are free. Updates will appear in the Updates tab of the Mac App Store when they are available.",
 "Apple values your privacy.  To learn how Apple may use your information, see Apple's Privacy Policy, which can be found at www.apple.com/privacy.",]
 
-articles.each do |article|
-    Article.create(text: article)
+articles.each_with_index do |article, idx|
+    Article.create(title: idx + 1, text: article)
 end

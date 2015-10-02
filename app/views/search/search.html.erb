@@ -8,12 +8,16 @@
     </p>
 <% end %>
 
-<ul>
-    <% @articles.each do |article| %>
+<% @articles.each do |article| %>
+    <h3>
+        <%= link_to article.title, controller: "articles", action: "show", id: article._id %>
+    </h3>
+
+    <ul>
+    <% article.highlight.text.each do |snippet| %>
         <li>
-            <h3>
-            <%= link_to article.text, controller: "articles", action: "show", id: article._id %>
-            </h3>
+            <%= snippet.html_safe %>
         </li>
     <% end %>
-</ul>
+    </ul>
+<% end %>

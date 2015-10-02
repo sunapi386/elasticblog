@@ -15,7 +15,14 @@ class Article < ActiveRecord::Base
                 query: {
                     multi_match: {
                         query: query,
-                        fields: ['text']
+                        fields: ['title^10', 'text']
+                    }
+                },
+                highlight: {
+                    pre_tags: ['<strong>'],
+                    post_tags: ['</strong>'],
+                    fields: {
+                        text: {}
                     }
                 }
             }
