@@ -1,12 +1,12 @@
+<%= link_to 'New Article', new_article_path %>
+<%= link_to 'Search', search_path %>
 <h1>All Articles</h1>
 
 <ul>
     <% @articles.each do |article| %>
         <li>
-            <h3><%= link_to article.title, article_path(:id => article.title) %></h3>
+            <h3><%= link_to article.title, article_path(:id => article.id) %></h3>
             <%= article.text %>
         </li>
     <% end %>
 </ul>
-
-<%= link_to 'New Article', new_article_path %>
