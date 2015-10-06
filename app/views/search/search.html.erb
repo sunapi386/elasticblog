@@ -12,6 +12,7 @@
     <h3>
         <%= link_to article.title, controller: "articles", action: "show", id: article._id %>
     </h3>
+    score: <%= article._score %>
 
     <ul>
     <% article.highlight.text.each do |snippet| %>
